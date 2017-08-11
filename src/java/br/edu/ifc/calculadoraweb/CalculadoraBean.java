@@ -49,5 +49,11 @@ public class CalculadoraBean {
         org.tempuri.CalculatorSoap port = service.getCalculatorSoap();
         return port.add(intA, intB);
     }
+    private int addi(int intA, int intB) {
+        // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
+        // If the calling of port operations may lead to race condition some synchronization is required.
+        org.tempuri.CalculatorSoap port = service.getCalculatorSoap();
+        return port.add(intA, intB);
+    }
     
 }
